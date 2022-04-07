@@ -1,0 +1,9 @@
+Roteiro:
+Criação de personagem
+Mostrar como o boss é
+Luta com ele
+Se morreu, reinicia
+Se venceu, faz alguma coisa
+
+Anotações:
+O que os personagens tem em cumom: nome, classe, arquetipo, vida, dano;
