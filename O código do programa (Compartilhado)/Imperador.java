@@ -1,0 +1,27 @@
+package RPG_50taoo;
+
+public class Imperador extends Personagem {
+	//O que os chefão do nosso RPG terão em comum?
+	// Cezanthersoon, Imperador da Cevada
+	
+	int danu, atq;
+	boolean acertu;
+	
+	@Override
+	public void atacar() {
+		System.out.println("Cezanthersoon te ataca com 'Mega-Garrafada Rainiquem'!");
+		atq = (dado.nextInt(20) + 6);
+		
+		if (atq >= 10) {
+			acertu = true;
+		}
+		else {
+			acertu = false;
+			System.out.println("Mas ele errou! E agora outra pessoa tá toda cortada e com cheiro de loira gelada.\n");
+		}
+		
+		if (acertu == true) { 
+			int danu = dado.nextInt(8) + 3;
+		}
+	}
+}
