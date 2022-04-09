@@ -21,7 +21,11 @@ public class Imperador extends Personagem {
 		}
 		
 		if (acertu == true) { 
-			int danu = dado.nextInt(8) + 3;
+			danu = dado.nextInt(8) + 3;
 		}
+	}
+
+	public int getDanu() {
+		return danu;
 	}
 }

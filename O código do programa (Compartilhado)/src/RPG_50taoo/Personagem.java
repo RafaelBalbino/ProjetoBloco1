@@ -155,4 +155,5 @@ public class Personagem {
 	public void setArmadura(int armadura) {
 		this.armadura = armadura;
 	}
+
 }

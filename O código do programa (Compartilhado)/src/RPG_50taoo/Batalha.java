@@ -26,7 +26,7 @@ public class Batalha {
 			
 			if (per.getClasse() == 1) {
 				per.setArmadura(10);
-				per.setVida(25);
+				per.setVida(30);
 				
 				System.out.println("Classe escolhida: Mago \n");
 				System.out.println("Você estudou magia toda sua vida...agora é " 
@@ -58,7 +58,7 @@ public class Batalha {
 
 			if (per.getClasse() == 2) {
 				per.setArmadura(10);
-				per.setVida(30);
+				per.setVida(40);
 				
 				System.out.println("Classe escolhida: Guerreiro \n");
 				System.out.println("Você estudou a arte da guerra por toda a sua vida... "
@@ -109,14 +109,7 @@ public class Batalha {
 		
 		int vidaImp = 100;
 		int contTurno = 1;
-		int vidaPer;
-		
-		if (per.getClasse() == 1) {
-			 vidaPer = 30;
-		}
-		else {
-			vidaPer = 40;
-		}
+		int vidaPer = per.getVida();
 		
 		// Mesmo criando essas variáveis acima(que provavelmente não é pra usar), o personagem não perde vida
 		// Contador de turno é mais pra ficar mais fofolete mesmo, precisa mudar isso não.
@@ -134,17 +127,19 @@ public class Batalha {
 			}
 			imp.atacar();
 			
-			vidaPer -= imp.danu;
+			vidaPer -= imp.getDanu();
 			System.out.println("Fim do turno " + contTurno + "\n");
 			contTurno++;
 		}
+		
 
-		if (per.getVida() > 0) {
-			System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
-			+ "pertence à você agora!");
+		if (vidaPer <= 0) {
+			System.out.println("Você foi derrotado pelo Imperador da Cevada...e perdeu todas as suas cervejas.");
+			
 		} 
 		else {
-			System.out.println("Você foi derrotado pelo Imperador da Cevada...e perdeu todas as suas cervejas.");
+			System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
+					+ "pertence à você agora!");
 		}
 	}
 }
