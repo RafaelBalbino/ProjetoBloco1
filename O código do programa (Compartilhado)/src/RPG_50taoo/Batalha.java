@@ -3,30 +3,32 @@ package RPG_50taoo;
 import java.util.Scanner;
 
 //Esperar pra ver como utilizar Collections
-//Esperar pra ver como utilizar Expections
 
 public class Batalha {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Personagem per = new Personagem();
 		Imperador imp = new Imperador();
 			
 		Scanner leia = new Scanner(System.in);
-			
+		
+		System.out.println("Seja bem-vindo a 50TÃOO, o RPG do Império da Cevada!\n");
+		Thread.sleep(3000);
+		
 	    System.out.print("Digite o nome do seu personagem: ");
 		per.setNome(leia.next());
 
 		while (per.getClasse() != 1 || per.getClasse() != 2 && per.getArquetipo() != 1 || per.getArquetipo() != 2) {
-			System.out.println("Agora escolha sua classe, caro jogador!");
-			System.out.print("1 - Mago | 2 - Guerreiro: ");
+			System.out.println("Agora escolha sua classe, caro(a) jogador(a)!");
+			System.out.print("1 - Mago/Feitiçeira | 2 - Guerreiro(a): ");
 			per.setClasse(leia.nextInt());
 			System.out.println();
 			
 			if (per.getClasse() == 1) {
-				per.setArmadura(10);
+				per.setArmadura(8);
 				per.setVida(30);
 				
-				System.out.print("Classe escolhida: Mago \n");
+				System.out.print("Classe escolhida: Mago/Feitiçeira \n");
 				System.out.println("Você estudou magia toda sua vida...agora é " 
 				+ "hora de por em prática tudo o que aprendeu!");
 
@@ -37,13 +39,13 @@ public class Batalha {
 				if (per.getArquetipo() == 1) {
 					System.out.println();
 					System.out.println("Arquetipo escolhido: Piromancia");
-					System.out.println("Você é um mago que usa de sua magia para queimar a carne "
+					System.out.println("Você é um(a) mago/feitiçeira que usa de sua magia para queimar a carne "
 					+ " de seus inimigos enquanto assiste as chamas tornarem tudo em cinzas.");
 					break;
 				} else if (per.getArquetipo() == 2) {
 					System.out.println();
 					System.out.println("Arquetipo escolhido: Criogenia");
-					System.out.println("Você é um mago que congela cada centímetro de seus inimigos, "
+					System.out.println("Você é um(a) mago/feitiçeira que congela cada centímetro de seus inimigos, "
 					+ "sua alma tão gélida quanto sua magia.");
 					break;
 				} else {
@@ -56,19 +58,20 @@ public class Batalha {
 				per.setArmadura(10);
 				per.setVida(40);
 				
-				System.out.print("Classe escolhida: Guerreiro \n");
+				System.out.print("Classe escolhida: Guerreiro(a) \n");
 				System.out.println("Você estudou a arte da guerra por toda a sua vida... "
 				+ "mas agora é hora de por em prática tudo o que aprendeu!");
 
 				System.out.println("Em que tipo de arma você é proficiente?");
-				System.out.print("1 - Arqueiro (Arco de Precisão) | 2 - Samurai (Katana) - ");
+				System.out.print("1 - Arqueiro(a) (Arco de Precisão) | 2 - Samurai (Katana) - ");
 				per.setArquetipo(leia.nextInt());
 
 				if (per.getArquetipo() == 1) {
 					System.out.println();
-					System.out.println("Arquetipo escolhido: Arqueiro");
+					System.out.println("Arquetipo escolhido: Arqueiro(a)");
 					System.out.println("Você treinou com um arco sua vida toda, aperfeiçoando sua "
-					+ " mira e perfurando seus inimigos com suas flechas. Que nem o Légolas.");
+					+ " mira e perfurando, com maestria, todos seus inimigos com suas flechas. " 
+					+ "Que nem o Légolas.");
 					break;
 				} else if (per.getArquetipo() == 2) {
 					System.out.println();
@@ -78,7 +81,7 @@ public class Batalha {
 					break;
 				} 
 				else {
-					System.out.println("Escolha um, ô seu palhaço.");
+					System.out.println("Escolha um, ô seu(ua) palhaço(a).");
 				}
 			}
 			else {
@@ -86,40 +89,45 @@ public class Batalha {
 				System.out.println();
 			}
 		}
+		Thread.sleep(4000);
 		System.out.println();
 		per.informacoesPersonagem();
 		per.checarClasse(per.getClasse());
 		System.out.println();
-		
+		Thread.sleep(4500);
 		
 		System.out.println("Em uma linda sexta-feira, você acorda querendo sextar e vai para a sua taverna favorita "
 		+ "à fim de se divertir e tomar um suco de cevada geladinho, \nenquanto assiste duelos em sua bola de cristal "
 		+ "portátil, um presente de seu avô, Gerenay Icho Brasilis.\n");
-		// Delay de 7 segundos
+		Thread.sleep(5750);
 		
 		System.out.println("Como hoje é dia de maldade, você decide comprar as dez últimas garrafas da taverna. "
 		+ "Enquanto você curte suas loiras geladas, Cezanthersoon, o \nImperador da Cevada, reclama da falta de cerveja "
 		+ "na taverna e, apenas pelo cheiro de álcool, começa a se aproximar de você, derrubando mesas \ne cadeiras em "
 		+ "seu caminho, completamente furioso. É hora de lutar!");
-		// Delay de 7 segundos
+		Thread.sleep(8000);
 		
 		System.out.println();
 		System.out.println("Você acaba de encontrar...Cezanthersoon, o Imperador da Cevada!");
 		System.out.println();
-		// Delay de 2 segundos 
+		Thread.sleep(2500);
 		
 		imp.setVida(50);
 		int vidaImp = imp.getVida();
 		int vidaPer = per.getVida();
 		int contTurno = 1;
 		
-		// Como dar um delay de 3 segundos antes de aparecer se o personagem/imperador errou o ataque ou não
+		/* System.out.println("Escolha sua ação: ");
+	 	 * System.out.println("1 - Atacar | 2 - Loira Gelada"); if (variavel == 1) 
+	 	 * aí ataca else vidaPer += 10 */
+		// Rafael se propôs a fazer, hein? Mas se outra pessoa quiser dar um help... 
+		
 		while (vidaPer > 0 && vidaImp > 0) {
-			System.out.println("Vida do Personagem: " + vidaPer + " | Vida do Cezantherson: " + vidaImp);
-			
+			System.out.println("Vida do(a) " +  per.getNome() + ": | " + vidaPer + 
+							   "Vida do Cezantherson: " + vidaImp);
 			per.atacar();
 			vidaImp -= per.getDano();
-	
+		
 			if (vidaImp <= 0) {
 				System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
 				break;
@@ -134,19 +142,22 @@ public class Batalha {
 			}
 			System.out.println("Fim do turno " + contTurno + "\n");
 			contTurno++;
-			// Delay de 3 segundos
+			Thread.sleep(3000);
 		}
 		
 		if (vidaPer <= 0) {
-			System.out.println("Você foi derrotado pelo Imperador da Cevada...e perdeu todas as suas cervejas.");
-			System.out.println("Quem sabe da próxima vez?");
-			
+			System.out.println("Você foi derrotado(a) pelo Imperador da Cevada...e perdeu todas as suas cervejas.\n");
+			Thread.sleep(1000);
+			System.out.println("Quem sabe da próxima vez? De qualquer forma, parabéns por (não)completar o jogo!\n");
+			System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
 		} 
 		else {
 			System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
-							  + "pertence à você agora!");
-			System.out.println("Parabéns por completar nosso jogo '50tãoo'! Nos avalie com 5 estrelas se gostou!" + 
-							  "E também se não gostou. Por favor, esse foi nosso primeiro projeto! ;-;");
+							  + "pertence à você agora!\n");
+			Thread.sleep(1000);
+			System.out.println("Parabéns por completar nosso jogo '50tãoo'! Nos avalie com 5 estrelas se gostou! " + 
+							  "E também se não gostou. Por favor, esse foi nosso primeiro projeto! ;-;\n");
+			System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
 		} 
 	}
 }

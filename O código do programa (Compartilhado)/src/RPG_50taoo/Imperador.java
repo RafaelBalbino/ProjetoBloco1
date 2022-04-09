@@ -1,6 +1,6 @@
 package RPG_50taoo;
 
-public class Imperador extends Personagem {
+public class Imperador extends Personagem implements AcoesImperador {
 	// Cezanthersoon, Imperador da Cevada
 		
 		int danu, atq;
@@ -11,7 +11,7 @@ public class Imperador extends Personagem {
 			System.out.println("Cezanthersoon te ataca com 'Mega-Garrafada Rainiquem'!");
 			atq = (dado.nextInt(20) + 6);
 			
-			if (atq >= 10) {
+			if (atq >= this.getArmadura()) {
 				acertu = true;
 			}
 			else {

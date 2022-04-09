@@ -10,10 +10,11 @@ public class Personagem {
 	
 	Random dado = new Random();
 	
-	public void atacar() {
+	public void atacar() throws InterruptedException {
 		if (this.classe == 1 && this.arquetipo == 1) {
 				System.out.println("Você ataca o imperador com um feitiço de fogo!\n");
 				ataque = (dado.nextInt(20) + 1) + (dado.nextInt(10) + 1);
+				Thread.sleep(1500);
 				
 				if (ataque >= 14) {
 					acerto = true;
@@ -32,6 +33,7 @@ public class Personagem {
 		else if (this.classe == 1 && this.arquetipo == 2) {
 				System.out.println("Você ataca o imperador com um feitiço de gelo!\n");
 				ataque = (dado.nextInt(20) + 1) + (dado.nextInt(8) + 1);
+				Thread.sleep(1500);
 				
 				if (ataque >= 14) {
 					acerto = true;
@@ -50,6 +52,7 @@ public class Personagem {
 		else if (this.classe == 2 && this.arquetipo == 1) {
 			System.out.println("Você dispara uma flecha em direção ao imperador!\n");
 			ataque = (dado.nextInt(20) + 6);
+			Thread.sleep(1500);
 			
 			if (ataque >= 14) {
 				acerto = true;
@@ -68,6 +71,7 @@ public class Personagem {
 		else {
 			System.out.println("Você ataca o imperador com sua katana!\n");
 			ataque = (dado.nextInt(20) + 4);
+			Thread.sleep(1500);
 			
 			if (ataque >= 14) {
 				acerto = true;
