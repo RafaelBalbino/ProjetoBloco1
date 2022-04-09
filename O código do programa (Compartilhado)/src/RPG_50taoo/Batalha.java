@@ -2,20 +2,18 @@ package RPG_50taoo;
 
 import java.util.Scanner;
 
-// Utilizar 'Sobrecarga' que ainda não colocamos
-// Esperar pra ver como utilizar Collections
-// Esperar pra ver como utilizar Expections
+//Esperar pra ver como utilizar Collections
+//Esperar pra ver como utilizar Expections
 
-// Leo, vê como que a gente faz a batalha em si 
 public class Batalha {
 
 	public static void main(String[] args) {
 		Personagem per = new Personagem();
 		Imperador imp = new Imperador();
-		
+			
 		Scanner leia = new Scanner(System.in);
-
-		System.out.print("Digite o nome do seu personagem: ");
+			
+	    System.out.print("Digite o nome do seu personagem: ");
 		per.setNome(leia.next());
 
 		while (per.getClasse() != 1 || per.getClasse() != 2 && per.getArquetipo() != 1 || per.getArquetipo() != 2) {
@@ -28,23 +26,21 @@ public class Batalha {
 				per.setArmadura(10);
 				per.setVida(30);
 				
-				System.out.println("Classe escolhida: Mago \n");
+				System.out.print("Classe escolhida: Mago \n");
 				System.out.println("Você estudou magia toda sua vida...agora é " 
 				+ "hora de por em prática tudo o que aprendeu!");
 
 				System.out.println("Em que tipo de magia você é proficiente?");
-				System.out.print("1 - Piromancia(Fogo)| 2 - Criogenia(Gelo) - ");
+				System.out.print("1 - Piromancia(Fogo) | 2 - Criogenia(Gelo) - ");
 				per.setArquetipo(leia.nextInt());
 
 				if (per.getArquetipo() == 1) {
-					// Codar o cajado de fogo e o dano dele pra já setar ele aqui;
 					System.out.println();
 					System.out.println("Arquetipo escolhido: Piromancia");
 					System.out.println("Você é um mago que usa de sua magia para queimar a carne "
 					+ " de seus inimigos enquanto assiste as chamas tornarem tudo em cinzas.");
 					break;
 				} else if (per.getArquetipo() == 2) {
-					// Codar o cajado de gelo e o dano dele pra já setar ele aqui;
 					System.out.println();
 					System.out.println("Arquetipo escolhido: Criogenia");
 					System.out.println("Você é um mago que congela cada centímetro de seus inimigos, "
@@ -60,12 +56,12 @@ public class Batalha {
 				per.setArmadura(10);
 				per.setVida(40);
 				
-				System.out.println("Classe escolhida: Guerreiro \n");
+				System.out.print("Classe escolhida: Guerreiro \n");
 				System.out.println("Você estudou a arte da guerra por toda a sua vida... "
 				+ "mas agora é hora de por em prática tudo o que aprendeu!");
 
 				System.out.println("Em que tipo de arma você é proficiente?");
-				System.out.print("1 - Arqueiro (Arco de Precisão)| 2 - Samurai (Katana) - ");
+				System.out.print("1 - Arqueiro (Arco de Precisão) | 2 - Samurai (Katana) - ");
 				per.setArquetipo(leia.nextInt());
 
 				if (per.getArquetipo() == 1) {
@@ -92,54 +88,65 @@ public class Batalha {
 		}
 		System.out.println();
 		per.informacoesPersonagem();
+		per.checarClasse(per.getClasse());
 		System.out.println();
+		
 		
 		System.out.println("Em uma linda sexta-feira, você acorda querendo sextar e vai para a sua taverna favorita "
 		+ "à fim de se divertir e tomar um suco de cevada geladinho, \nenquanto assiste duelos em sua bola de cristal "
 		+ "portátil, um presente de seu avô, Gerenay Icho Brasilis.\n");
-
+		// Delay de 7 segundos
+		
 		System.out.println("Como hoje é dia de maldade, você decide comprar as dez últimas garrafas da taverna. "
 		+ "Enquanto você curte suas loiras geladas, Cezanthersoon, o \nImperador da Cevada, reclama da falta de cerveja "
 		+ "na taverna e, apenas pelo cheiro de álcool, começa a se aproximar de você, derrubando mesas \ne cadeiras em "
 		+ "seu caminho, completamente furioso. É hora de lutar!");
+		// Delay de 7 segundos
 		
 		System.out.println();
 		System.out.println("Você acaba de encontrar...Cezanthersoon, o Imperador da Cevada!");
 		System.out.println();
+		// Delay de 2 segundos 
 		
-		int vidaImp = 100;
-		int contTurno = 1;
+		imp.setVida(50);
+		int vidaImp = imp.getVida();
 		int vidaPer = per.getVida();
+		int contTurno = 1;
 		
-		// Mesmo criando essas variáveis acima(que provavelmente não é pra usar), o personagem não perde vida
-		// Contador de turno é mais pra ficar mais fofolete mesmo, precisa mudar isso não.
-		// Colocamos a armadura das duas classes como 10 pra testar mas nem isso ajuda, qualquer coisa muda de volta
-		// Pode ser que por mais que o dano do imperador calcule, ele não diminui a vida do personagem
-		
+		// Como dar um delay de 3 segundos antes de aparecer se o personagem/imperador errou o ataque ou não
 		while (vidaPer > 0 && vidaImp > 0) {
 			System.out.println("Vida do Personagem: " + vidaPer + " | Vida do Cezantherson: " + vidaImp);
-			per.atacar();
 			
+			per.atacar();
 			vidaImp -= per.getDano();
 	
-			if (vidaImp < 0) {
+			if (vidaImp <= 0) {
+				System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
 				break;
 			}
+		
 			imp.atacar();
-			
 			vidaPer -= imp.getDanu();
+			
+			if (vidaPer <= 0) {
+				System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+				break;
+			}
 			System.out.println("Fim do turno " + contTurno + "\n");
 			contTurno++;
+			// Delay de 3 segundos
 		}
 		
-
 		if (vidaPer <= 0) {
 			System.out.println("Você foi derrotado pelo Imperador da Cevada...e perdeu todas as suas cervejas.");
+			System.out.println("Quem sabe da próxima vez?");
 			
 		} 
 		else {
 			System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
-					+ "pertence à você agora!");
-		}
+							  + "pertence à você agora!");
+			System.out.println("Parabéns por completar nosso jogo '50tãoo'! Nos avalie com 5 estrelas se gostou!" + 
+							  "E também se não gostou. Por favor, esse foi nosso primeiro projeto! ;-;");
+		} 
 	}
 }

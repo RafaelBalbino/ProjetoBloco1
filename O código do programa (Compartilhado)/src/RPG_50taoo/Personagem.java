@@ -3,7 +3,6 @@ package RPG_50taoo;
 import java.util.Random;
 
 public class Personagem {
-	//O que os personagens do nosso RPG terão em comum?
 	
 	private String nome;
 	private int classe, arquetipo, vida, ataque, dano, armadura;
@@ -21,6 +20,7 @@ public class Personagem {
 				}
 				else {
 					acerto = false;
+					
 					System.out.println("Mas você errou! E alguém tá pegando fogo(bixo) sem ser o Imperador...\n");
 				}
 				
@@ -85,34 +85,42 @@ public class Personagem {
 	
 	public void informacoesPersonagem() {
 		System.out.println("Nome do personagem: " + this.nome);
-		if (this.classe == 1 && this.arquetipo == 1) {
-			System.out.println("Classe do personagem: Mago");
-		}	
-		else if (this.classe == 1 && this.arquetipo == 2) {
-			System.out.println("Classe do personagem: Mago");
-		}	
-		else if (this.classe == 2 && this.arquetipo == 1) {
-		System.out.println("Classe do personagem: Guerreiro");
-		}
-		else {
-			System.out.println("Classe do personagem: Guerreiro");
-		}
+		System.out.println("Vida do personagem: " + this.vida);
+		System.out.println("Armadura do personagem: " + this.armadura);
+	}
 	
+	public void checarClasse(int classe) {
 		if (this.classe == 1 && this.arquetipo == 1) {
+			System.out.println("Classe do personagem: Mago");
 			System.out.println("Arquetipo do personagem: Piromancia");
 		}	
 		else if (this.classe == 1 && this.arquetipo == 2) {
+			System.out.println("Classe do personagem: Mago");
 			System.out.println("Arquetipo do personagem: Criogenia");
 		}	
 		else if (this.classe == 2 && this.arquetipo == 1) {
+		System.out.println("Classe do personagem: Guerreiro");
 		System.out.println("Arquetipo do personagem: Arqueiro");
 		}
 		else {
+			System.out.println("Classe do personagem: Guerreiro");
 			System.out.println("Arquetipo do personagem: Samurai");
 		}
-		
-		System.out.println("Vida do personagem: " + this.vida);
-		System.out.println("Armadura do personagem: " + this.armadura);
+	}
+	
+	public void checarClasse(int classe, int arquetipo) {
+		if (this.classe == 1 && this.arquetipo == 1) {
+			System.out.println("Classe do personagem: Mago focado em Piromancia");
+		}	
+		else if (this.classe == 1 && this.arquetipo == 2) {
+			System.out.println("Classe do personagem: Mago focado em Criogenia");
+		}	
+		else if (this.classe == 2 && this.arquetipo == 1) {
+		System.out.println("Classe do personagem: Guerreiro que empunha arco e flecha");
+		}
+		else {
+			System.out.println("Classe do personagem: Guerreiro que empunha katana");
+		}
 	}
 
 	public String getNome() {
