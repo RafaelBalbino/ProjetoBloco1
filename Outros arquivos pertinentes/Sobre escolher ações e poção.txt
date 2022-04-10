@@ -1,0 +1,110 @@
+while (vidaPer > 0 && vidaImp > 0) {
+			
+			System.out.println("Vida do(a) " +  per.getNome() + ": " + vidaPer + " | " 
+							 + "Vida do Cezantherson: " + vidaImp);
+			System.out.println();
+			
+			System.out.println("Escolha sua ação (E se escolher outra opção é panaca): ");
+			System.out.print("1 - Atacar | 2 - Loira Gelada - ");
+			acao = leia.nextInt();
+			System.out.println();
+			
+			do {
+				switch (acao)  {
+				case 1:
+					per.atacar();
+					vidaImp -= per.getDano();
+				
+					if (vidaImp <= 0) {
+						System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+						System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
+										+ "pertence à você agora!\n");
+						Thread.sleep(1000);
+						System.out.println("Parabéns por completar nosso jogo '50tãoo'! Nos avalie com 5 estrelas se gostou! " + 
+										  "E também se não gostou. Por favor, esse foi nosso primeiro projeto! ;-;\n");
+						System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+						break;
+					}
+				
+					imp.atacar();
+					vidaPer -= imp.getDanu();
+					
+					if (vidaPer <= 0) {
+						System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+						System.out.println("Você foi derrotado(a) pelo Imperador da Cevada...e perdeu todas as suas cervejas.\n");
+						Thread.sleep(1000);
+						System.out.println("Quem sabe da próxima vez? De qualquer forma, parabéns por (não)completar o jogo!\n");
+						System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+						break;
+							
+					}
+					System.out.println("Fim do turno " + contTurno + "\n");
+					contTurno++;
+					Thread.sleep(3000);
+					
+					System.out.println("\nEscolha sua ação: ");
+					System.out.print("1 - Atacar | 2 - Loira Gelada - ");
+					acao = leia.nextInt();
+					break;
+					
+				case 2:
+					if (contLoira == 1) {
+						
+						vidaPer += 10;
+						
+						imp.atacar();
+						vidaPer -= imp.getDanu();
+						
+						if (vidaPer <= 0) {
+							System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+							System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+							System.out.println("Você foi derrotado(a) pelo Imperador da Cevada...e perdeu todas as suas cervejas.\n");
+							Thread.sleep(1000);
+							System.out.println("Quem sabe da próxima vez? De qualquer forma, parabéns por (não)completar o jogo!\n");
+							System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+							break;
+						}
+						System.out.println("Fim do turno " + contTurno + "\n");
+						contTurno++;
+						contLoira--;
+						Thread.sleep(3000);
+					}
+					else {
+						System.out.println("Você procura por uma loira gelada mas percebe que acabaram! Nesse meio " +
+						"tempo, o imperador te ataca!\n");
+						
+						imp.atacar();
+						vidaPer -= imp.getDanu();
+						
+						if (vidaPer <= 0) {
+							System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+							System.out.println("Você foi derrotado(a) pelo Imperador da Cevada...e perdeu todas as suas cervejas.\n");
+							Thread.sleep(1000);
+							System.out.println("Quem sabe da próxima vez? De qualquer forma, parabéns por (não)completar o jogo!\n");
+							System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+							break;
+						}
+						System.out.println("Fim do turno " + contTurno + "\n");
+						contTurno++;
+						Thread.sleep(3000);
+						
+						System.out.println("\nEscolha sua ação: ");
+						System.out.print("1 - Atacar | 2 - Loira Gelada - ");
+						acao = leia.nextInt();
+						break;
+					}
+				default:
+					/*System.out.println("Vida do(a) " +  per.getNome() + ": " + vidaPer + " | " 
+							 + "Vida do Cezantherson: " + vidaImp);
+					System.out.println();
+			
+					System.out.println("\nNão existe terceira opção, panaca! Agora escolha sua ação: ");
+					System.out.println("1 - Atacar | 2 - Loira Gelada - ");
+					acao = leia.nextInt();*/
+			}
+		} while (acao > 0 && acao < 3);
+			
+			System.out.println("Já que tu é palhaço, inicia o programa de novo aí, vai!");
+
+- Esse código tá quase certo, só precisamos saber como que fazemos para que acabae o programa depois da mensagem de vitória/derrota
+- Ver Collections ainda por que o Exception já foi colocado 'Thread.sleep e throws InterruptedException'
