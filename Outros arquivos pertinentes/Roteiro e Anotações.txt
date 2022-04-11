@@ -8,3 +8,37 @@ Se venceu, mensagem de vitória
 Anotações:
 O que os personagens tem em cumom: nome, classe, arquetipo, vida, dano;
 Imperador tem o próprio ataque
+
+Apresentação:
+Parte 1 (Apresentação do Programa em si):
+Daniel - Falar sobre como chegamos nessa ideia (Lê o roteiro fofolete depois se deleta do grupo >>>>>>>>>NECESSARIO<<>>>><<<<)
+
+Rafael - Mostrar o programa funcionando chamando duas pessoas(Ester e outra pessoa) para uma jogar com as duas classes no final.
+
+Parte 2 - (Explicando o código do programa):
+Falar dos dados também (os d20 da vida lá do D&D);
+Beatrice - Falar sobre as classes (Do personagem, imperador e batalha[pra que servem]);
+Atributos (Os do personagem e por que fizemos eles);
+Objetos (Que usamos pra chamar as classes personagem(per) e imperador(imp) na classe batalha);
+
+Wesley - Herança (ClasseFilho extends ClasseMãe):
+Personagem - ClasseMãe (Foi pra criar os atributos do personagem e também padronizar o que imperador também tem em comum);
+Imperador - ClasseFilho (Foi pra criar os métodos do chefão(imperador);
+Batalha - ClasseExecutável (Pra executar o programa (tem o public static void main(String[] args))
+Encapsulamento:
+Interface e Getters e Setters (Por causa do private TipoVariável NomeVariável, padroniza e gera segurança);
+
+Mayara - Falar sobre Sobrecarga( Que foi quando fizemos a 'checarClasse(int classe) e na mesma classe, fizemos a checarClasse(int 
+classe, int arquetipo) e Sobreescrita (Que foi quando demos 'Override' no método atacar() do Imperador para que ele faça algo 
+diferente[mesmo método, mesma assinatura mas classes diferentes, fazendo algo diferente também]);
+
+Marcos - Collections (Usando o ArrayList para listar todos os nomes de todos do grupo, tipo créditos);
+
+Léo - Exception (Explicar sobre a 'Thread.sleep()' também)
+
+Conclusão:
+Espero que tenham gostado do nosso jogo, se quiserem baixar, tá no GitHub do nosso Hokage
+
+O que tem que ser incluido:
+Polimorfismo, Sobrecarga e Sobreescrita
+Collections

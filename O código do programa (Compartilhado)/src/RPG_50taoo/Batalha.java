@@ -1,5 +1,6 @@
 package RPG_50taoo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //Esperar pra ver como utilizar Collections
@@ -9,7 +10,7 @@ public class Batalha {
 	public static void main(String[] args) throws InterruptedException {
 		Personagem per = new Personagem();
 		Imperador imp = new Imperador();
-			
+		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("Seja bem-vindo a 50TÃOO, o RPG do Império da Cevada!\n");
@@ -26,7 +27,7 @@ public class Batalha {
 			
 			if (per.getClasse() == 1) {
 				per.setArmadura(8);
-				per.setVida(30);
+				per.setVida(35);
 				
 				System.out.print("Classe escolhida: Mago/Feitiçeira \n");
 				System.out.println("Você estudou magia toda sua vida...agora é " 
@@ -99,13 +100,13 @@ public class Batalha {
 		System.out.println("Em uma linda sexta-feira, você acorda querendo sextar e vai para a sua taverna favorita "
 		+ "à fim de se divertir e tomar um suco de cevada geladinho, \nenquanto assiste duelos em sua bola de cristal "
 		+ "portátil, um presente de seu avô, Gerenay Icho Brasilis.\n");
-		Thread.sleep(5750);
+		Thread.sleep(7000);
 		
 		System.out.println("Como hoje é dia de maldade, você decide comprar as dez últimas garrafas da taverna. "
 		+ "Enquanto você curte suas loiras geladas, Cezanthersoon, o \nImperador da Cevada, reclama da falta de cerveja "
 		+ "na taverna e, apenas pelo cheiro de álcool, começa a se aproximar de você, derrubando mesas \ne cadeiras em "
 		+ "seu caminho, completamente furioso. É hora de lutar!");
-		Thread.sleep(8000);
+		Thread.sleep(11250);
 		
 		System.out.println();
 		System.out.println("Você acaba de encontrar...Cezanthersoon, o Imperador da Cevada!");
@@ -117,19 +118,14 @@ public class Batalha {
 		int vidaPer = per.getVida();
 		int contTurno = 1;
 		
-		/* System.out.println("Escolha sua ação: ");
-	 	 * System.out.println("1 - Atacar | 2 - Loira Gelada"); if (variavel == 1) 
-	 	 * aí ataca else vidaPer += 10 */
-		// Rafael se propôs a fazer, hein? Mas se outra pessoa quiser dar um help... 
-		
 		while (vidaPer > 0 && vidaImp > 0) {
-			System.out.println("Vida do(a) " +  per.getNome() + ": | " + vidaPer + 
-							   "Vida do Cezantherson: " + vidaImp);
+			System.out.println("Vida do(a) " +  per.getNome() + ": " + vidaPer + " | "
+							 + "Vida do Cezantherson: " + vidaImp);
 			per.atacar();
 			vidaImp -= per.getDano();
 		
 			if (vidaImp <= 0) {
-				System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+				System.out.println("Turnos percorridos até o final da batalha: " + contTurno + "\n");
 				break;
 			}
 		
@@ -137,7 +133,7 @@ public class Batalha {
 			vidaPer -= imp.getDanu();
 			
 			if (vidaPer <= 0) {
-				System.out.println("Turnos percorridos até o final da batlha: " + contTurno + "\n");
+				System.out.println("Turnos percorridos até o final da batalha: " + contTurno + "\n");
 				break;
 			}
 			System.out.println("Fim do turno " + contTurno + "\n");
@@ -150,14 +146,37 @@ public class Batalha {
 			Thread.sleep(1000);
 			System.out.println("Quem sabe da próxima vez? De qualquer forma, parabéns por (não)completar o jogo!\n");
 			System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+			Thread.sleep(4000);
 		} 
 		else {
 			System.out.println("Você derrotou o Imperador da Cevada e agora é o novo Imperador! Toda a cevada gelada "
 							  + "pertence à você agora!\n");
 			Thread.sleep(1000);
-			System.out.println("Parabéns por completar nosso jogo '50tãoo'! Nos avalie com 5 estrelas se gostou! " + 
+			System.out.println("Parabéns por completar nosso jogo '50tãoo'! Deixa um like e nos avalie com 5 estrelas se gostou! " + 
 							  "E também se não gostou. Por favor, esse foi nosso primeiro projeto! ;-;\n");
-			System.out.println("Cesar e Anderson nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
-		} 
+			System.out.println("Cesar e Anderson, nós te amamos! PS: Isso não é chantagem pra dar bom feedback kkkk");
+			Thread.sleep(4000);
+		}
+		
+		ArrayList<String> pes = new ArrayList<>();
+		
+		String pessoa1 = "-Rafael: " + "Programador Chefe\n";
+		String pessoa2 = "Mayara: " + "Padroeira dos Programadores que a Bên zuou nosso projeto\n";
+		String pessoa3 = "Beatrice: " + "Cê tá beijando(muito)????? Ah, o áudio tá ligado...\n";
+		String pessoa4 = "Léo: " + "Arrumou o código e deixou todos felizes\n";
+		String pessoa5 = "Marcos: " + "Futuro fazedor de trilha de som\n";
+		String pessoa6 = "Wesley: " + "Não é o safadãoo(infelizmente)\n";
+		String pessoa7 = "Daniel: " + "Nosso idealizador, mas já pode tirar do grupo kkkk-";
+
+		pes.add(pessoa1);
+		pes.add(pessoa2);
+		pes.add(pessoa3);
+		pes.add(pessoa4);
+		pes.add(pessoa5);
+		pes.add(pessoa6);
+		pes.add(pessoa7);
+		
+		System.out.println("\n---> Pessoal que fez o projeto <---");
+		System.out.println("\n" + pes);
 	}
 }
